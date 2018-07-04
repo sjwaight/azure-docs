@@ -1,21 +1,13 @@
 ---
-title: Get started with Autoscale in Azure | Microsoft Docs
-description: Learn how to scale your resource in Azure.
+title: Get started with autoscale in Azure
+description: "Learn how to scale your resource Web App, Cloud Service, Virtual Machine or Virtual Machine Scale set in Azure."
 author: rajram
-manager: rboucher
-editor: ''
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-
-ms.assetid: d37d3fda-8ef1-477c-a360-a855b418de84
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+services: azure-monitor
+ms.service: azure-monitor
+ms.topic: conceptual
 ms.date: 07/07/2017
 ms.author: rajram
-
+ms.component: autoscale
 ---
 # Get started with Autoscale in Azure
 This article describes how to set up your Autoscale settings for your resource in the Microsoft Azure portal.
@@ -124,7 +116,7 @@ You can always return to Autoscale by clicking **Enable autoscale** and then **S
 [1]:https://portal.azure.com
 [2]: ./media/monitoring-autoscale-get-started/azure-monitor-launch.png
 [3]: ./media/monitoring-autoscale-get-started/discover-autoscale-azure-monitor.png
-[4]: https://docs.microsoft.com/en-us/azure/app-service-web/app-service-web-get-started-dotnet
+[4]: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet
 [5]: ./media/monitoring-autoscale-get-started/scale-setting-new-web-app.png
 [6]: ./media/monitoring-autoscale-get-started/create-scale-setting-web-app.png
 [7]: ./media/monitoring-autoscale-get-started/scale-in-recommendation.png

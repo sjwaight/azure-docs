@@ -4,7 +4,7 @@ description: How to prepare a Windows VHD or VHDX before uploading to Azure
 services: virtual-machines-windows
 documentationcenter: ''
 author: glimoli
-manager: timlt
+manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
 
@@ -13,8 +13,8 @@ ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.devlang: na
-ms.topic: article
-ms.date: 08/01/2017
+ms.topic: troubleshooting
+ms.date: 05/11/2018
 ms.author: genli
 
 ---
@@ -154,7 +154,7 @@ Make sure that the following settings are configured correctly for remote deskto
     ```PowerShell
     Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services' -name "KeepAliveEnable" 1 -Type DWord
     Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services' -name "KeepAliveInterval" 1 -Type DWord
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp ' -name "KeepAliveTimeout" 1 -Type DWord
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp' -name "KeepAliveTimeout" 1 -Type DWord
     ```
 6. Reconnect：
     
@@ -261,9 +261,12 @@ Make sure that the following settings are configured correctly for remote deskto
     ```
     Make sure that the report shows a clean and healthy disk.
 
-2. Set the Boot Configuration Data (BCD) settings. Run these commands on an elevated CMD window:
+2. Set the Boot Configuration Data (BCD) settings. 
+
+    > [!Note]
+    > Make sure you run these commands on an elevated CMD window and **NOT** on PowerShell:
    
-   ```PowerShell
+   ```CMD
    bcdedit /set {bootmgr} integrityservices enable
    
    bcdedit /set {default} device partition=C:
@@ -360,7 +363,7 @@ If, instead, you want only to create one VM from one disk, you don’t have to u
 For more information about how to create a VM from a specialized disk, see:
 
 - [Create a VM from a specialized disk](create-vm-specialized.md)
-- [Create a VM from a specialized VHD disk](https://azure.microsoft.com/resources/templates/201-vm-specialized-vhd/)
+- [Create a VM from a specialized VHD disk](https://review.docs.microsoft.com/en-us/azure/virtual-machines/windows/create-vm-specialized-portal?branch=master)
 
 If you want to create a generalized image, you need to run sysprep. For more information about Sysprep, see [How to Use Sysprep: An Introduction](http://technet.microsoft.com/library/bb457073.aspx). 
 
@@ -421,4 +424,5 @@ If there’s any data disk that is attached to the VM, the Temporal drive volume
 
 ## Next steps
 * [Upload a Windows VM image to Azure for Resource Manager deployments](upload-generalized-managed.md)
+* [Troubleshoot Azure Windows virtual machine activation problems](troubleshoot-activation-problems.md)
 
